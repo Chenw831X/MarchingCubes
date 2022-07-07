@@ -15,7 +15,9 @@ add_library(${PROJECT_NAME}_dev ${SRCFILES})
 target_include_directories(${PROJECT_NAME}_dev PUBLIC src)
 
 # Eigen, igl, spdlog
-target_include_directories(${PROJECT_NAME}_dev PUBLIC /usr/local/include)
+target_include_directories(${PROJECT_NAME}_dev PUBLIC external/eigen-3.4.0)
+target_include_directories(${PROJECT_NAME}_dev PUBLIC external/libigl-2.4.0/include)
+target_include_directories(${PROJECT_NAME}_dev PUBLIC external/spdlog-1.10.0/include)
 # disable Eigen's multi-threading in multi-threaded application
 target_compile_definitions(${PROJECT_NAME}_dev PUBLIC EIGEN_DONT_PARALLELIZE)
 
